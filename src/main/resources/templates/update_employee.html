@@ -11,6 +11,26 @@
 	crossorigin="anonymous">
 </head>
 <body>
+	<div class="container">
+		<h1>Employee Management System</h1>
+		<hr>
+		<h2>Update Employee</h2>
 
+		<form action="#" th:action="@{/saveEmployee}" th:object="${employee}"
+			method="post" enctype="application/x-www-form-urlencoded" class="form-control col-12">
+			
+			<input type="hidden" th:field="*{id}" />
+			
+			<input type="text" th:field="*{firstName}" placeholder="First Name" class="form-control mb-4 col-4" >
+			
+			<input type="text" th:field="*{lastName}" placeholder="Last Name" class="form-control mb-4 col-4">
+			
+			<input type="text" th:field="*{email}" placeholder="E-mail" class="form-control mb-4 col-4">
+		
+			<button type="submit" class="btn btn-info col-2" >Update Employee</button>
+		</form>
+		<hr>
+		<a th:href="@{/}">Back to Employee List</a>
+	</div>
 </body>
 </html>

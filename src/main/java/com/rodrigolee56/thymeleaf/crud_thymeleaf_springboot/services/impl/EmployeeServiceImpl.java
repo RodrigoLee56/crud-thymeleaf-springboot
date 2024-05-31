@@ -24,7 +24,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public void saveEmployee(Employee employee) {
 		this.employeeRepository.save(employee);
-
 	}
 
 	@Override
@@ -37,6 +36,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 			throw new RuntimeException("Employee not found for id :: " + id);
 		}
 		return employee;
+	}
+
+	@Override
+	public void deleteEmployeeById(Integer id) {
+		this.employeeRepository.deleteById(id);
 	}
 
 }
